@@ -1,0 +1,15 @@
+{
+  "name": "cryptopapers_uploader",
+  "version": "0.1.0",
+  "description": "Desktop app for uploading files to the Cryptopapers database",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "test"
+  },
+  "author": "Marek Rewers",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^4.0.5"
+  }
+}
