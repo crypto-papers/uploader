@@ -5,28 +5,30 @@
   "main": "main.js",
   "scripts": {
     "build": "webpack --config ./config/webpack.config.js --mode production",
-    "start": "electron .",
+    "start": "electron src/main.js",
     "test": "test"
   },
   "author": "Marek Rewers",
   "license": "MIT",
+  "prettier": "@cryptopapers/prettier-config",
   "devDependencies": {
     "@babel/core": "^7.4.0",
     "@babel/plugin-proposal-class-properties": "^7.4.0",
     "@babel/preset-env": "^7.4.2",
     "@babel/preset-react": "^7.0.0",
+    "@cryptopapers/eslint-config": "^0.1.0",
+    "@cryptopapers/prettier-config": "^1.0.0",
     "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.5",
     "electron": "^4.0.5",
     "eslint": "^5.16.0",
-    "eslint-config-airbnb": "^17.1.0",
     "eslint-loader": "^2.1.2",
     "eslint-plugin-import": "^2.16.0",
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-react": "^7.12.4",
-    "uglifyjs-webpack-plugin": "^2.1.2",
-    "webpack": "^4.29.6",
-    "webpack-cli": "^3.3.0"
+    "prettier": "^1.19.1",
+    "typescript": "^3.7.2",
+    "webpack": "^4.41.2"
   },
   "dependencies": {
     "react": "^16.8.4",
