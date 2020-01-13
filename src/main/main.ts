@@ -1,6 +1,8 @@
 const { app, BrowserWindow } = require('electron');
 
-createWindow = () => {
+let win: BrowserWindow | null;
+
+const createWindow = () => {
   // Create the browser window.
   const win = new BrowserWindow({
     width: 1300,
