@@ -1,3 +1,5 @@
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
 const paths = require('./paths');
 
 module.exports = env => {
@@ -15,12 +17,17 @@ module.exports = env => {
         },
       ],
     },
-    resolve: {
-      extensions: ['.tsx', '.ts', '.js'],
-    },
     output: {
       filename: '[name].js',
       path: paths.appDist,
+    },
+    plugins: [
+      new HtmlWebpackPlugin({
+        template: paths.appIndex,
+      }),
+    ],
+    resolve: {
+      extensions: ['.tsx', '.ts', '.js'],
     },
     target: env === 'main' ? 'electron-main' : 'electron-renderer',
   };
