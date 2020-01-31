@@ -11,6 +11,6 @@ module.exports = {
   appDist: resolveApp('dist'),
   appIndex: resolveApp('src/static/index.html'),
   appMain: resolveApp('src/main/main.ts'),
-  appRenderer: resolveApp('src/renderer/index.ts'),
+  appRenderer: resolveApp('src/renderer/index.tsx'),
   appSrc: resolveApp('src'),
 };
