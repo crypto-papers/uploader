@@ -4,8 +4,10 @@
   "description": "Desktop app for uploading files to the Cryptopapers database",
   "main": "main.js",
   "scripts": {
-    "build": "webpack --config ./config/webpack.config.js --mode production",
-    "start": "electron src/main.js",
+    "build": "npm run build:main && npm run build:renderer",
+    "build:main": "webpack --env main --config ./config/webpack.config.js --mode production",
+    "build:renderer": "webpack --env renderer --config ./config/webpack.config.js --mode production",
+    "start": "electron dist/main.js",
     "test": "test"
   },
   "author": "Marek Rewers",
@@ -28,7 +30,8 @@
     "eslint-plugin-react": "^7.12.4",
     "prettier": "^1.19.1",
     "typescript": "^3.7.2",
-    "webpack": "^4.41.2"
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
   },
   "dependencies": {
     "react": "^16.8.4",

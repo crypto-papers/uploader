@@ -9,6 +9,7 @@ const resolveApp = relativePath => path.resolve(pluginDirectory, relativePath);
 
 module.exports = {
   appDist: resolveApp('dist'),
-  appIndex: resolveApp('src/index.ts'),
+  appMain: resolveApp('src/main/main.ts'),
+  appRenderer: resolveApp('src/renderer/index.ts'),
   appSrc: resolveApp('src'),
 };
