@@ -1,9 +1,15 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
+const babel = require('./babel');
 const paths = require('./paths');
 
 module.exports = env => {
+  const babelLoader = {
+    loader: 'babel-loader',
+    options: babel.babelConfig(env),
+  };
+
   return {
     devtool: 'inline-source-map',
     entry: {
@@ -12,12 +18,12 @@ module.exports = env => {
     module: {
       rules: [
         {
-          exclude: /node_modules/,
-          test: /\.ts(x?)$/,
-          use: 'ts-loader',
+          exclude: /node_modules/u,
+          test: /\.ts(?<tsx>x?)$/u,
+          use: [babelLoader, { loader: 'ts-loader' }],
         },
         {
-          test: /\.(sa|sc|c)ss$/,
+          test: /\.(?<type>sa|sc|c)ss$/u,
           use: [MiniCssExtractPlugin.loader, 'css-loader'],
         },
       ],
@@ -35,7 +41,7 @@ module.exports = env => {
       }),
     ],
     resolve: {
-      extensions: ['.tsx', '.ts', '.js', '.jsx'],
+      extensions: ['.js', '.jsx', '.ts', '.tsx'],
     },
     target: env === 'main' ? 'electron-main' : 'electron-renderer',
   };
