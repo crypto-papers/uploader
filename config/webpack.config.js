@@ -1,10 +1,10 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const babel = require('./babel');
 const paths = require('./paths');
+const plugins = require('./plugins');
 
-module.exports = env => {
+module.exports = (env, argv) => {
   const babelLoader = {
     loader: 'babel-loader',
     options: babel.babelConfig(env),
@@ -15,6 +15,7 @@ module.exports = env => {
     entry: {
       [env]: env === 'main' ? paths.appMain : paths.appRenderer,
     },
+    mode: argv.mode,
     module: {
       rules: [
         {
@@ -23,23 +24,38 @@ module.exports = env => {
           use: [babelLoader, { loader: 'ts-loader' }],
         },
         {
+          include: /\.module\.(?<type>sa|sc|c)ss$/u,
           test: /\.(?<type>sa|sc|c)ss$/u,
-          use: [MiniCssExtractPlugin.loader, 'css-loader'],
+          use: [
+            MiniCssExtractPlugin.loader,
+            {
+              loader: 'css-loader',
+              options: {
+                importLoaders: 2,
+                modules: {
+                  localIdentName: '[local]-[hash:base64:10]',
+                  mode: 'local',
+                },
+                url: true,
+              },
+            },
+            'resolve-url-loader',
+            'sass-loader',
+          ],
+        },
+        {
+          exclude: /\.module\.(?<type>sa|sc|c)ss$/u,
+          test: /\.(?<type>sa|sc|c)ss$/u,
+          use: [MiniCssExtractPlugin.loader, 'css-loader', 'resolve-url-loader', 'sass-loader'],
         },
       ],
     },
     output: {
       filename: '[name].js',
       path: paths.appDist,
+      publicPath: './',
     },
-    plugins: [
-      new HtmlWebpackPlugin({
-        template: paths.appIndex,
-      }),
-      new MiniCssExtractPlugin({
-        filename: '[name].css',
-      }),
-    ],
+    plugins: plugins.loadPlugins(env),
     resolve: {
       extensions: ['.js', '.jsx', '.ts', '.tsx'],
     },
