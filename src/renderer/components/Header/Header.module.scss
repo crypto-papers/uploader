@@ -1,0 +1,15 @@
+@import '../../styles/colors.scss';
+
+.header {
+  align-items: center;
+  background-color: $blueDark;
+  background: $gradientBlueDarkLight;
+  box-shadow: $boxShadowBlack;
+  color: $white;
+  display: flex;
+  z-index: 1;
+}
+
+.title {
+  padding: 1rem; 
+}

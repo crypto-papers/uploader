@@ -1,14 +1,10 @@
 import * as React from 'react';
 import * as ReactDom from 'react-dom';
 
-import Header from './components/Header/Header';
-
-import './app.css';
+import Layout from './components/Layout/Layout';
 
 const App: React.FC = () => (
-  <div className="test">
-    <Header />
-  </div>
+  <Layout />
 );
 
 App.displayName = 'App';

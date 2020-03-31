@@ -1,0 +1,42 @@
+@import '../../styles/colors.scss';
+
+.logo {
+  height: 7.5rem;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  padding: 1rem 0 0;
+  text-align: center;
+}
+
+.menuItem {
+  border-radius: 3px;
+  margin: 0.2rem -1.5rem;
+  padding: 1rem 0;
+
+  &.active {
+    background-color: $blueLight;
+    box-shadow: $boxShadowInset;
+    color: $black;
+    font-weight: 700;
+  }
+
+  &:hover {
+    background-color: $greyLight50;
+    box-shadow: $boxShadowInset;
+    color: $black;
+    font-weight: 700;
+  }
+}
+
+.sidebar {
+  background-color: $black95;
+  box-shadow: $boxShadowBlack;
+  color: $white;
+  grid-area: sidebar;
+  padding: 1rem 2rem 2rem;
+  z-index: 0;
+}

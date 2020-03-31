@@ -1,0 +1,22 @@
+@import '../../styles/colors.scss';
+
+.button {
+  align-self: flex-end;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+}
+
+.input {
+  border: none;
+  border-radius: 3px;
+  box-shadow: $boxShadowInset;
+  padding: 0.2rem;
+}
+
+.label {
+  margin: 0.5rem 0;
+}
