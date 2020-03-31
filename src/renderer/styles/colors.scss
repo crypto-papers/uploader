@@ -1,0 +1,35 @@
+// Colors
+$blueDark: #053782;
+$blueLight: #1d88e0;
+$blueMidnight: #11013b;
+$red: #e54b4b;
+$redDeep: #a21212;
+
+// Monochromes
+$black: #1c1d23;
+// $black: #333333;
+$greyLight: #e0e0e0;
+$greyMedium: #bdbdbd;
+$white: #ffffff;
+
+// Opacities
+$black25: rgba($black, 0.25);
+$black95: rgba($black, 0.95);
+$greyLight50: rgba($greyLight, 0.5);
+$red15: rgba($red, 0.15);
+
+// Gradients
+$gradientBlueDarkLight: linear-gradient(
+  27deg,
+  $blueDark 0%,
+  $blueLight 100%
+); // blueDark to blueLight
+
+// Borders & Box Shadows
+$borderBlack: 1px solid $black;
+$borderBlueLightThick: 0.4rem solid $blueLight;
+$borderGreyLight: 1px solid $greyLight;
+$borderRedDeep: 1px solid $redDeep;
+$boxShadowGrey: 2px 1px 3px 2px $greyLight50;
+$boxShadowBlack: 2px 1px 3px 2px $black25;
+$boxShadowInset: inset 0px 0px 10px rgba($black, 0.1);
