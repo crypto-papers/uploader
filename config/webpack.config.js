@@ -48,6 +48,17 @@ module.exports = (env, argv) => {
           test: /\.(?<type>sa|sc|c)ss$/u,
           use: [MiniCssExtractPlugin.loader, 'css-loader', 'resolve-url-loader', 'sass-loader'],
         },
+        {
+          test: /\.svg$/u,
+          use: [
+            {
+              loader: 'file-loader',
+              options: {
+                name: 'assets/[hash].[ext]',
+              },
+            },
+          ],
+        },
       ],
     },
     output: {
