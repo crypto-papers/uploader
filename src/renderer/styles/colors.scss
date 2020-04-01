@@ -7,7 +7,7 @@ $redDeep: #a21212;
 
 // Monochromes
 $black: #1c1d23;
-// $black: #333333;
+$greyDark: #757575;
 $greyLight: #e0e0e0;
 $greyMedium: #bdbdbd;
 $white: #ffffff;
@@ -28,6 +28,7 @@ $gradientBlueDarkLight: linear-gradient(
 // Borders & Box Shadows
 $borderBlack: 1px solid $black;
 $borderBlueLightThick: 0.4rem solid $blueLight;
+$borderGreyDark: 1px solid $greyDark;
 $borderGreyLight: 1px solid $greyLight;
 $borderRedDeep: 1px solid $redDeep;
 $boxShadowGrey: 2px 1px 3px 2px $greyLight50;

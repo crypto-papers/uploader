@@ -7,7 +7,7 @@ import Sidebar from '../Sidebar/Sidebar';
 
 const Layout: React.FC = () => (
   <div className={style.layout}>
-    <Header />
+    <Header title="Add Paper" />
     <Sidebar />
     <main className={style.main}>
       <Form />
