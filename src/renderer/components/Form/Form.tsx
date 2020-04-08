@@ -2,8 +2,15 @@ import * as React from 'react';
 
 import * as style from './Form.module.scss';
 
+const { remote } = window.require('electron');
+const mainProcess = remote.require('./main');
+
 const Form: React.FC = () => (
   <form className={style.form}>
+    <button type="button" onClick={() => mainProcess.getFile()}>
+      Upload Paper
+    </button>
+
     <label className={style.label} htmlFor="title">
       Title:
       <input className={style.input} id="title" name="title" placeholder="Paper Title" />
