@@ -7,15 +7,34 @@
   }
 
   body {
-    color: $black;
+    color: $blackLight;
     font-family: $baseFont;
-    font-size: $baseFontSize;
+    font-size: $normal;
   }
 
-  h1,
-  h2,
-  h3 {
+  h1 {
     font-family: $primaryHeaderFont;
+    font-size: $xLargeFont;
+  }
+
+  h2 {
+    font-family: $primaryHeaderFont;
+    font-size: $largeFont;
+  }
+
+  h3 {
+    font-family: $secondaryHeaderFont;
+    font-size: $mediumLargeFont;
+  }
+
+  h4 {
+    font-family: $secondaryHeaderFont;
+    font-size: $mediumFont;
+  }
+
+  h5 {
+    font-family: $secondaryHeaderFont;
+    font-size: $mediumSmallFont;
   }
 
   input,

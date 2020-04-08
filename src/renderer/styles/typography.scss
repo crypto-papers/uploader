@@ -11,8 +11,12 @@ $secondaryHeaderFont: 'Rosario', serif;
 
 // Font sizes
 $baseFontSize: 16px;
-$xLargeFont: 2.5rem;
-$largeFont: 2rem;
-$mediumLargeFont: 1.5rem;
-$mediumFont: 1.25rem;
-$smallFont: 0.75rem;
+$typeScale: 1.25;
+
+$smallFont: calc(#{$baseFontSize} / #{$typeScale});
+$normal: $baseFontSize;
+$mediumSmallFont: calc(#{$baseFontSize} * #{$typeScale});
+$mediumFont: calc(#{$mediumSmallFont} * #{$typeScale});
+$mediumLargeFont: calc(#{$mediumFont} * #{$typeScale});
+$largeFont: calc(#{$mediumLargeFont} * #{$typeScale});
+$xLargeFont: calc(#{$largeFont} * #{$typeScale});
