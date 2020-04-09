@@ -2,6 +2,7 @@ import * as React from 'react';
 
 import * as s from './Button.module.scss';
 
+/* eslint-disable-next-line import/exports-last */
 export enum ButtonColor {
   BLACK = 'black',
   BLUE = 'blue',
@@ -9,15 +10,26 @@ export enum ButtonColor {
   LIGHTBLUE = 'light-blue',
 }
 
+/* eslint-disable-next-line import/exports-last */
 export enum ButtonType {
   BUTTON = 'button',
   RESET = 'reset',
   SUBMIT = 'submit',
 }
 
-const Button: React.FC<{ color: ButtonColor; label: string; type: ButtonType }> = ({
+const Button: React.FC<{
+  color?: ButtonColor;
+  disabled?: boolean;
+  id?: string;
+  label: string;
+  name?: string;
+  type?: ButtonType;
+}> = ({
   color = ButtonColor.DEFAULT,
+  disabled = false,
+  id,
   label,
+  name: buttonName,
   type = ButtonType.BUTTON,
 }) => {
   let classes;
@@ -38,7 +50,7 @@ const Button: React.FC<{ color: ButtonColor; label: string; type: ButtonType }> 
 
   return (
     /* eslint-disable react/button-has-type */
-    <button className={classes} type={type}>
+    <button className={classes} disabled={disabled} id={id} name={buttonName} type={type}>
       {label}
     </button>
     /* eslint-enable react/button-has-type */
