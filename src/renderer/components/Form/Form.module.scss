@@ -5,8 +5,14 @@
 }
 
 .form {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-areas:
+    'preview upperform upperform'
+    'lowerform lowerform lowerform'
+    'submit submit submit';
+  grid-template-columns: 1fr repeat(2, 2fr);
+  grid-template-rows: repeat(2, 1fr) 3rem;
+  height: calc(100% - 4rem);
   padding: 2rem;
 }
 
@@ -21,5 +27,33 @@
   display: flex;
   flex-direction: column;
   font-weight: 600;
-  margin: 0.5rem 0;
+}
+
+.preview {
+  align-items: center;
+  background-color: $greyLightest;
+  border-radius: 5px;
+  box-shadow: $boxShadowInsetDark;
+  color: $greyDark;
+  display: flex;
+  grid-area: preview;
+  height: 100%;
+  justify-content: center;
+  margin-right: 2rem;
+  padding: 0.5rem;
+}
+
+.submit {
+  align-items: center;
+  display: flex;
+  grid-area: submit;
+  justify-content: flex-end;
+}
+
+.upperform {
+  grid-area: upperform;
+
+  > label:not(:first-of-type) {
+    margin: 1rem 0;
+  }
 }

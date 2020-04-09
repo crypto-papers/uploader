@@ -1,36 +1,42 @@
 import * as React from 'react';
 
-import * as style from './Form.module.scss';
+import Button, { ButtonColor, ButtonType } from '../Button/Button';
+import * as s from './Form.module.scss';
 
-const { remote } = window.require('electron');
+const { ipcRenderer, remote } = window.require('electron');
 const mainProcess = remote.require('./main');
 
 const Form: React.FC = () => (
-  <form className={style.form}>
-    <button type="button" onClick={() => mainProcess.getFile()}>
-      Upload Paper
-    </button>
+  <form className={s.form}>
+    <div>
+      <div className={s.preview}>No Preview Available</div>
+      <button type="button" onClick={(): void => mainProcess.getFile()}>
+        Upload Paper
+      </button>
+    </div>
 
-    <label className={style.label} htmlFor="title">
-      Title:
-      <input className={style.input} id="title" name="title" placeholder="Paper Title" />
-    </label>
+    <div className={s.upperform}>
+      <label className={s.label} htmlFor="title">
+        Title:
+        <input className={s.input} id="title" name="title" placeholder="Paper Title" />
+      </label>
 
-    <label className={style.label} htmlFor="sub-title">
-      Subtitle:
-      <input className={style.input} id="sub-title" name="sub-title" placeholder="Paper Subtitle" />
-    </label>
+      <label className={s.label} htmlFor="sub-title">
+        Subtitle:
+        <input className={s.input} id="sub-title" name="sub-title" placeholder="Paper Subtitle" />
+      </label>
 
-    <label className={style.label} htmlFor="auhor">
-      Author(s):
-      <select id="author" name="author">
-        <option value="">Select Author</option>
-      </select>
-    </label>
+      <label className={s.label} htmlFor="auhor">
+        Author(s):
+        <select id="author" name="author">
+          <option value="">Select Author</option>
+        </select>
+      </label>
+    </div>
 
-    <button className={style.button} type="submit">
-      Submit
-    </button>
+    <div className={s.submit}>
+      <Button color={ButtonColor.BLUE} label="Submit" type={ButtonType.SUBMIT} />
+    </div>
   </form>
 );
 

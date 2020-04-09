@@ -1,0 +1,36 @@
+@import '../../styles/colors.scss';
+
+.button {
+  border: none;
+  border-radius: 5px;
+  box-shadow: $boxShadowGreyDark;
+  font-weight: 700;
+  letter-spacing: 0.05rem;
+  padding: 0.5rem 0.75rem;
+
+  &:hover {
+    box-shadow: $boxShadowGreyDarkDeep;
+    cursor: pointer;
+    transform: translate(-2px, -2px);
+  }
+}
+
+.black {
+  background-color: $blackLight;
+  color: $white;
+}
+
+.blue {
+  background-color: $blueDark;
+  color: $white;
+}
+
+.default {
+  background-color: $greyLight;
+  color: $blueMidnight;
+}
+
+.lightBlue {
+  background-color: $blueLight;
+  color: $black;
+}

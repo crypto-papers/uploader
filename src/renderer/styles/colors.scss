@@ -10,12 +10,14 @@ $black: #1c1d23;
 $blackLight: #383838;
 $greyDark: #757575;
 $greyLight: #e0e0e0;
+$greyLightest: #f5f5f5;
 $greyMedium: #bdbdbd;
 $white: #ffffff;
 
 // Opacities
 $black25: rgba($black, 0.25);
 $black95: rgba($black, 0.95);
+$greyDark25: rgba($greyDark, 0.25);
 $greyLight50: rgba($greyLight, 0.5);
 $red15: rgba($red, 0.15);
 
@@ -26,12 +28,21 @@ $gradientBlueDarkLight: linear-gradient(
   $blueLight 100%
 ); // blueDark to blueLight
 
-// Borders & Box Shadows
+// Borders
 $borderBlack: 1px solid $black;
 $borderBlueLightThick: 0.4rem solid $blueLight;
 $borderGreyDark: 1px solid $greyDark;
 $borderGreyLight: 1px solid $greyLight;
 $borderRedDeep: 1px solid $redDeep;
-$boxShadowGrey: 2px 1px 3px 2px $greyLight50;
-$boxShadowBlack: 2px 1px 3px 2px $black25;
-$boxShadowInset: inset 0px 0px 10px rgba($black, 0.1);
+
+//Box Shadows
+$deep: 3px 3px 3px 2px;
+$inset: inset 0px 0px 10px;
+$normal: 2px 1px 3px 2px;
+
+$boxShadowGrey: $normal $greyLight50;
+$boxShadowGreyDark: $normal $greyDark25;
+$boxShadowGreyDarkDeep: $deep $greyDark25;
+$boxShadowBlack: $normal $black25;
+$boxShadowInset: $inset rgba($black, 0.1);
+$boxShadowInsetDark: $inset rgba($black, 0.4);
