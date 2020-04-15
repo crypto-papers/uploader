@@ -17,14 +17,16 @@ export enum ButtonType {
   SUBMIT = 'submit',
 }
 
-const Button: React.FC<{
+interface IButtonProps {
   color?: ButtonColor;
   disabled?: boolean;
   id?: string;
   label: string;
   name?: string;
   type?: ButtonType;
-}> = ({
+}
+
+const Button: React.FC<IButtonProps> = ({
   color = ButtonColor.DEFAULT,
   disabled = false,
   id,
@@ -49,6 +51,8 @@ const Button: React.FC<{
   }
 
   return (
+    /* Disabling button-has-type rule since type is dynamically generated
+       and hence does not conform to expected values */
     /* eslint-disable react/button-has-type */
     <button className={classes} disabled={disabled} id={id} name={buttonName} type={type}>
       {label}
