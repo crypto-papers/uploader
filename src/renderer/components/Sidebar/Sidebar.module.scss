@@ -18,25 +18,35 @@
   text-align: center;
 }
 
-.menuItem {
+.menu-item {
+  align-items: center;
+  background-color: transparent;
+  border: none;
   border-radius: 3px;
+  color: $white;
   display: flex;
   flex-direction: column;
-  margin: 0.5rem -0.5rem;
   padding: 1rem 0;
-
-  &.active {
-    background-color: $blueLight;
-    box-shadow: $boxShadowInset;
-    color: $black;
-    font-weight: 700;
-  }
+  width: 100%;
 
   &:hover {
     background-color: $greyDark;
     box-shadow: $boxShadowInset;
     color: $white;
+    cursor: pointer;
   }
+
+  &.active,
+  &.focus {
+    background-color: $blueLight;
+    box-shadow: $boxShadowInset;
+    color: $black;
+    font-weight: 700;
+  }
+}
+
+.menu-li {
+  margin: 0.5rem -0.5rem;
 }
 
 .nav {
@@ -47,7 +57,6 @@
 .sidebar {
   background-color: $blackLight;
   box-shadow: $boxShadowBlack;
-  color: $white;
   grid-area: sidebar;
   padding: 1rem 2rem 2rem;
   z-index: 0;
