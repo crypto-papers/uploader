@@ -40,6 +40,11 @@
   input,
   select {
     font-family: $baseFont;
+
+    &:focus {
+      box-shadow: $focusShadow;
+      outline: none;
+    }
   }
 
   #uploader-root {

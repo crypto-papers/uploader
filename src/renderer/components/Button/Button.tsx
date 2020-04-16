@@ -22,6 +22,7 @@ interface IButtonProps {
   disabled?: boolean;
   id?: string;
   label: string;
+  onClick: (e: React.MouseEvent<HTMLButtonElement>) => void;
   name?: string;
   type?: ButtonType;
 }
@@ -32,6 +33,7 @@ const Button: React.FC<IButtonProps> = ({
   id,
   label,
   name: buttonName,
+  onClick,
   type = ButtonType.BUTTON,
 }) => {
   let classes;
@@ -54,7 +56,14 @@ const Button: React.FC<IButtonProps> = ({
     /* Disabling button-has-type rule since type is dynamically generated
        and hence does not conform to expected values */
     /* eslint-disable react/button-has-type */
-    <button disabled={disabled} id={id} name={buttonName} styleName={classes} type={type}>
+    <button
+      disabled={disabled}
+      id={id}
+      name={buttonName}
+      styleName={classes}
+      type={type}
+      onClick={onClick}
+    >
       {label}
     </button>
     /* eslint-enable react/button-has-type */

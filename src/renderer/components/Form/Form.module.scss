@@ -20,6 +20,7 @@
   border: none;
   border-radius: 3px;
   box-shadow: $boxShadowInset;
+  margin-top: 0.5rem;
   padding: 0.2rem;
 }
 
@@ -39,7 +40,7 @@
   grid-area: preview;
   height: 100%;
   justify-content: center;
-  margin-right: 2rem;
+  margin: 0 2rem 1rem 0;
   padding: 0.5rem;
 }
 

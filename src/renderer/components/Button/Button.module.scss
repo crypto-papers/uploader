@@ -7,11 +7,24 @@
   font-weight: 700;
   letter-spacing: 0.05rem;
   padding: 0.5rem 0.75rem;
+  transition: 0.3s ease;
 
   &:hover {
     box-shadow: $boxShadowGreyDarkDeep;
     cursor: pointer;
     transform: translate(-2px, -2px);
+  }
+
+  &:focus {
+    box-shadow: $focusShadowStrong;
+    outline: none;
+    transform: scale(1.05);
+  }
+
+  &:disabled {
+    background-color: $greyDark;
+    cursor: not-allowed;
+    transform: none;
   }
 }
 
@@ -33,4 +46,8 @@
 .lightBlue {
   background-color: $blueLight;
   color: $black;
+
+  &:focus {
+    box-shadow: $focusShadowStrongAlternate;
+  }
 }

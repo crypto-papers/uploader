@@ -46,3 +46,8 @@ $boxShadowGreyDarkDeep: $deep $greyDark25;
 $boxShadowBlack: $normal $black25;
 $boxShadowInset: $inset rgba($black, 0.1);
 $boxShadowInsetDark: $inset rgba($black, 0.4);
+
+// Focus states
+$focusShadow: 0 0 5px rgba($blueLight, 0.6);
+$focusShadowStrong: 0 0 5px $blueLight;
+$focusShadowStrongAlternate: 0 0 5px $blueDark;

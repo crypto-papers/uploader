@@ -36,8 +36,13 @@
     cursor: pointer;
   }
 
-  &.active,
-  &.focus {
+  &:focus {
+    background-color: $greyDark;
+    outline: none;
+    transform: scale(1.02);
+  }
+
+  &.active {
     background-color: $blueLight;
     box-shadow: $boxShadowInset;
     color: $black;

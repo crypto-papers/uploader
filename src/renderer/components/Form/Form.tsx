@@ -18,9 +18,11 @@ const Form: React.FC = () => (
   <form styleName="form">
     <div>
       <div styleName="preview">No Preview Available</div>
-      <button type="button" onClick={(): void => acceptFileUpload()}>
-        Upload Paper
-      </button>
+      <Button
+        color={ButtonColor.LIGHTBLUE}
+        label="Upload Paper"
+        onClick={(): void => acceptFileUpload()}
+      />
     </div>
 
     <div styleName="upperform">
@@ -43,7 +45,12 @@ const Form: React.FC = () => (
     </div>
 
     <div styleName="submit">
-      <Button color={ButtonColor.BLUE} label="Submit" type={ButtonType.SUBMIT} />
+      <Button
+        color={ButtonColor.BLUE}
+        label="Submit"
+        type={ButtonType.SUBMIT}
+        onClick={() => alert('Hello')}
+      />
     </div>
   </form>
 );
