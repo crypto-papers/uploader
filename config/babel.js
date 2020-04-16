@@ -5,6 +5,10 @@ const setPresets = env => {
     return [['@babel/preset-env', { modules: false }], '@babel/preset-react'];
   }
 
+  if (env === 'jest') {
+    return [['@babel/preset-env', { modules: 'commonjs' }], '@babel/preset-react'];
+  }
+
   return ['@babel/preset-env'];
 };
 
