@@ -4,7 +4,7 @@
     "declaration": false,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "jsx": "react",
+    "jsx": "preserve",
     "lib": ["es2017", "dom"],
     "module": "es6",
     "moduleResolution": "node",

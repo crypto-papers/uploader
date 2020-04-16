@@ -1,32 +1,40 @@
 import * as React from 'react';
 
 import Button, { ButtonColor, ButtonType } from '../Button/Button';
-import * as s from './Form.module.scss';
+import './Form.module.scss';
 
 const { ipcRenderer, remote } = window.require('electron');
 const mainProcess = remote.require('./main');
 
+const acceptFileUpload = (): void => {
+  ipcRenderer.on('file-opened', (e, filepath, contents) => {
+    mainProcess.createPreviewPane(filepath);
+  });
+
+  mainProcess.getFile();
+};
+
 const Form: React.FC = () => (
-  <form className={s.form}>
+  <form styleName="form">
     <div>
-      <div className={s.preview}>No Preview Available</div>
-      <button type="button" onClick={(): void => mainProcess.getFile()}>
+      <div styleName="preview">No Preview Available</div>
+      <button type="button" onClick={(): void => acceptFileUpload()}>
         Upload Paper
       </button>
     </div>
 
-    <div className={s.upperform}>
-      <label className={s.label} htmlFor="title">
+    <div styleName="upperform">
+      <label htmlFor="title" styleName="label">
         Title:
-        <input className={s.input} id="title" name="title" placeholder="Paper Title" />
+        <input id="title" name="title" placeholder="Paper Title" styleName="input" />
       </label>
 
-      <label className={s.label} htmlFor="sub-title">
+      <label htmlFor="sub-title" styleName="label">
         Subtitle:
-        <input className={s.input} id="sub-title" name="sub-title" placeholder="Paper Subtitle" />
+        <input id="sub-title" name="sub-title" placeholder="Paper Subtitle" styleName="input" />
       </label>
 
-      <label className={s.label} htmlFor="auhor">
+      <label htmlFor="auhor" styleName="label">
         Author(s):
         <select id="author" name="author">
           <option value="">Select Author</option>
@@ -34,7 +42,7 @@ const Form: React.FC = () => (
       </label>
     </div>
 
-    <div className={s.submit}>
+    <div styleName="submit">
       <Button color={ButtonColor.BLUE} label="Submit" type={ButtonType.SUBMIT} />
     </div>
   </form>

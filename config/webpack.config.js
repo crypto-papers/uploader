@@ -11,6 +11,7 @@ module.exports = (env, argv) => {
   };
 
   return {
+    context: env === 'main' ? paths.main : paths.renderer,
     devtool: 'inline-source-map',
     entry: {
       [env]: env === 'main' ? paths.appMain : paths.appRenderer,
@@ -22,6 +23,11 @@ module.exports = (env, argv) => {
           exclude: /node_modules/u,
           test: /\.ts(?<tsx>x?)$/u,
           use: [babelLoader, { loader: 'ts-loader' }],
+        },
+        {
+          exclude: /node_modules/u,
+          test: /\.js(?<jsx>x?)$/u,
+          use: babelLoader,
         },
         {
           include: /\.module\.(?<type>sa|sc|c)ss$/u,

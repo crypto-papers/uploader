@@ -1,10 +1,10 @@
 import * as React from 'react';
 
-import * as style from './Header.module.scss';
+import './Header.module.scss';
 
 const Header: React.FC<{ title: string }> = ({ title }) => (
-  <header className={style.header}>
-    <h1 className={style.title}>{title}</h1>
+  <header styleName="header">
+    <h1 styleName="title">{title}</h1>
   </header>
 );
 

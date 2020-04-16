@@ -1,15 +1,16 @@
 import * as React from 'react';
 
-import * as style from './Layout.module.scss';
 import Form from '../Form/Form';
 import Header from '../Header/Header';
 import Sidebar from '../Sidebar/Sidebar';
 
+import './Layout.module.scss';
+
 const Layout: React.FC = () => (
-  <div className={style.layout}>
+  <div styleName="layout">
     <Header title="Add Paper" />
     <Sidebar />
-    <main className={style.main}>
+    <main styleName="main">
       <Form />
     </main>
   </div>

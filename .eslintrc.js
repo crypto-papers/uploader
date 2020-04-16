@@ -3,6 +3,7 @@ module.exports = {
   env: {
     browser: true,
     node: true,
+    jest: true,
   },
   ignorePatterns: ['dist/', 'node_modules/'],
   parser: 'babel-eslint',
@@ -33,6 +34,12 @@ module.exports = {
             tsx: 'never',
           },
         ],
+        'import/no-unassigned-import': [
+          'error',
+          {
+            allow: ['**/*.css', '**/*.sass', '**/*.scss'],
+          },
+        ],
         'import/no-namespace': 'off',
         'react/jsx-filename-extension': [
           'error',
@@ -41,6 +48,7 @@ module.exports = {
           },
         ],
         'react/prop-types': 'off',
+        '@typescript-eslint/interface-name-prefix': ['error', 'always'],
       },
     },
   ],

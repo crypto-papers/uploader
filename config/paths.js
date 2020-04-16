@@ -13,5 +13,6 @@ module.exports = {
   appMain: resolveApp('src/main/main.ts'),
   appRenderer: resolveApp('src/renderer/index.tsx'),
   appSrc: resolveApp('src'),
+  main: resolveApp('src/main'),
   renderer: resolveApp('src/renderer'),
 };
