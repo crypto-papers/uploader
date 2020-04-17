@@ -13,7 +13,7 @@ module.exports = {
   },
   preset: 'ts-jest',
   rootDir: '../',
-  setupFilesAfterEnv: ['@testing-library/jest-dom/extend-expect'],
+  setupFilesAfterEnv: ['@testing-library/jest-dom/extend-expect', 'jest-axe/extend-expect'],
   testEnvironment: 'jest-environment-jsdom',
   verbose: true,
 };
