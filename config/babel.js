@@ -16,6 +16,7 @@ const babelConfig = env => ({
   plugins: [
     '@babel/plugin-proposal-class-properties',
     '@babel/plugin-proposal-optional-chaining',
+    '@babel/plugin-transform-runtime',
     [
       'babel-plugin-react-css-modules',
       {
