@@ -61,7 +61,7 @@
     "webpack-cli": "^3.3.10"
   },
   "dependencies": {
-    "electron": "^8.2.0",
+    "electron": "^11.5.0",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
     "react-feather": "^2.0.3"
